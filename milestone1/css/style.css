@@ -2,14 +2,143 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* text */
+
+*{
+    font-size: small;
 }
 
 /* common */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(blue 0%, blue 130px, white 130px, white 100%)
+}
+.conteiner{
+   background-color: turquoise;
+   display: flex;
+   margin: 60px;
+   height: 600px;
+   width: 1000px;
+}
 
+.cont-left,
+.cont-right{
+   height: 90%;
+   border: 1 solid black;
+   background-color: white;
+   margin: 20px 0;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
 
+}
 
+* header{
+    height: 50px;
+    background-color: blueviolet;
+    border: 1px solid gray;
+    flex-shrink: 0;
+}
+
+* li{
+   list-style: none;
+}
 /* left side*/
 
+.cont-left{
+    margin-left: 20px;
+    width: 40%;
+    
+}
 
 
+.cont-left main{
+    overflow-y: scroll;
+}
+
+.notifications{
+    height: 60px;
+    background-color: rgb(85, 85, 222);
+    
+}
+
+.search{
+    background-color: rgb(185, 149, 218);
+    padding: 5px;
+  
+}
+
+.search input{
+    width: 100%;
+    
+}
+
+.contacts{
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+header,
+.contact{
+    display: flex;
+}
 /* right side*/
+
+.cont-right{
+    margin-right: 20px;
+    width: 60%;
+}
+
+.contact{
+    flex-grow: 1;
+}
+
+.cont-right main{
+    flex-grow: 1;
+    overflow-y: scroll;
+    
+}
+.sent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.recived{
+    display: flex;
+    flex-direction: column;
+    
+}
+.msg-user1,
+.msg-user2{
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 40px;
+    width: 20%;
+}
+.msg-user1{
+    background-color: green;
+    
+}
+
+
+.msg-user2{
+    background-color: rgb(30, 0, 128);
+   
+}
+
+.cont-right footer{
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    padding: 10px;
+}
+
+.footer-imp{
+    flex-grow: 1;
+}
