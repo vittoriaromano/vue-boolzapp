@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 <body>
@@ -17,20 +19,27 @@
             <!-- header -->
             <header>
                 <div class="contact"> 
-                    <img src="#" alt="SOPHIA">
-                    <h1>Sophia</h1>
+                    <img src="img/avatar_2.jpg" alt="SOPHIA">
+                    <h1>Nome</h1>
                 </div>
                 <div class="utilities">
-                    <span>ciao</span>
-                    <span>ciao</span>
-                    <span>ciao</span>
+                    <span class="p"><i class="fa-solid fa-circle-notch"></i></span>
+                    <span class="p"><i class="fa-solid fa-message"></i></span>
+                    <span class="p"><i class="fa-solid fa-ellipsis-vertical"></i></span>
                 </div>
             </header>
             <!-- parte notifice e search box fisse -->
            
-                <div class="notifications"></div>
+                <div class="notifications">
+                    <span class="bell"><i class="fa-solid fa-bell-slash"></i></span>
+                    <div>
+                        <h2>Hai delle notifiche</h2>
+                        <a href="#">tutte le notifiche di queso mondo</a>
+                    </div>
+                    
+                </div>
                    <div class="search">
-                     <input type="text">
+                     <input type="text" placeholder=" &#128269 Search contacts">
                    </div>
          
             <!-- /parte notifice e search box fisse -->
@@ -39,14 +48,10 @@
                 
                 <!-- contatti/ parte reattiva -->
                
-                    <ul class="contacts">
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae autem ipsa debitis quam asperiores optio minima incidunt, sunt id soluta molestiae, nesciunt veniam nemo accusamus expedita iure quidem doloribus laudantium?</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae autem ipsa debitis quam asperiores optio minima incidunt, sunt id soluta molestiae, nesciunt veniam nemo accusamus expedita iure quidem doloribus laudantium?</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae autem ipsa debitis quam asperiores optio minima incidunt, sunt id soluta molestiae, nesciunt veniam nemo accusamus expedita iure quidem doloribus laudantium?</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae autem ipsa debitis quam asperiores optio minima incidunt, sunt id soluta molestiae, nesciunt veniam nemo accusamus expedita iure quidem doloribus laudantium?</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae autem ipsa debitis quam asperiores optio minima incidunt, sunt id soluta molestiae, nesciunt veniam nemo accusamus expedita iure quidem doloribus laudantium?</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae autem ipsa debitis quam asperiores optio minima incidunt, sunt id soluta molestiae, nesciunt veniam nemo accusamus expedita iure quidem doloribus laudantium?</li>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae autem ipsa debitis quam asperiores optio minima incidunt, sunt id soluta molestiae, nesciunt veniam nemo accusamus expedita iure quidem doloribus laudantium?</li>
+                    <ul>
+                        <li>
+                            <img :src="contact.avatar" alt="js mi ha abbandonato">
+                        </li>
                     </ul>
                
                 
@@ -59,13 +64,13 @@
              <!-- header -->
             <header>
                 <div class="contact"> 
-                    <img src="#" alt="SOPHIA">
+                    <img src="img/avatar_1.jpg" alt="SOPHIA">
                     <h1>Sophia</h1>
                 </div>
                 <div class="utilities">
-                    <span>ciao</span>
-                    <span>ciao</span>
-                    <span>ciao</span>
+                    <span class="p"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <span class="p"><i class="fa-regular fa-file"></i></span>
+                    <span class="p"><i class="fa-solid fa-ellipsis-vertical"></i></span>
                 </div>
             </header>
              <!-- main -->
@@ -89,9 +94,9 @@
             </main>
             <!-- footer -->
             <footer>
-                <div class="emoji">ciao</div>
+                <div class="emoji"><i class="fa-regular fa-face-smile"></i></div>
                <input class="footer-imp" type="text">
-                <div class="emoji">ciao</div>
+                <div ><i class="fa-solid fa-microphone"></i></div>
             </footer>
         </div>
         <!--fine contenitore destra -->
@@ -102,8 +107,10 @@
 
 
    <!-- vue.js & js -->
+   
+   <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
    <script src="js/index.js"></script>
-   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+   
 
     
 </body>

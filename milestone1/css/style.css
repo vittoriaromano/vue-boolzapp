@@ -9,20 +9,30 @@
 
 *{
     font-size: small;
+    
+    
 }
 
 /* common */
+* a{
+    color: inherit;
+}
+.p{
+    padding:8px;
+    color: darkgray;
+}
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(blue 0%, blue 130px, white 130px, white 100%)
+    background: linear-gradient(#075E54 0%, #075E54 130px, rgb(196, 185, 185) 130px, rgb(196, 185, 185) 100%)
+    
 }
 .conteiner{
-   background-color: turquoise;
+   
    display: flex;
-   margin: 60px;
+   
    height: 600px;
    width: 1000px;
 }
@@ -41,13 +51,25 @@ body{
 
 * header{
     height: 50px;
-    background-color: blueviolet;
+    background-color: #ece5dd;
     border: 1px solid gray;
     flex-shrink: 0;
 }
 
 * li{
    list-style: none;
+}
+
+header img{
+    border-radius: 50%;
+    height: 40px;
+}
+header,
+.contact{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
 }
 /* left side*/
 
@@ -57,19 +79,29 @@ body{
     
 }
 
-
 .cont-left main{
     overflow-y: scroll;
 }
 
 .notifications{
     height: 60px;
-    background-color: rgb(85, 85, 222);
+    background-color: #55b2ff;
+    display: flex;
+    gap: .625rem;
+    padding: 10px;
+    align-items: center;
     
+}
+.bell{
+    background-color:  #ece5dd ;
+    color: #55b2ff;
+    padding: 10px;
+    border-radius: 50%;
+
 }
 
 .search{
-    background-color: rgb(185, 149, 218);
+    background-color: #ece5dd;
     padding: 5px;
   
 }
@@ -84,15 +116,13 @@ body{
     overflow-y: scroll;
 }
 
-header,
-.contact{
-    display: flex;
-}
+
 /* right side*/
 
 .cont-right{
     margin-right: 20px;
     width: 60%;
+   
 }
 
 .contact{
@@ -102,6 +132,7 @@ header,
 .cont-right main{
     flex-grow: 1;
     overflow-y: scroll;
+    background-image: url(../img/mine.jpg) ;
     
 }
 .sent{
@@ -117,18 +148,18 @@ header,
 .msg-user1,
 .msg-user2{
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
     margin: 20px 40px;
     width: 20%;
 }
 .msg-user1{
-    background-color: green;
+    background-color:#dcf8c6;
     
 }
 
 
 .msg-user2{
-    background-color: rgb(30, 0, 128);
+    background-color: white;
    
 }
 
@@ -137,6 +168,7 @@ header,
     justify-content: space-around;
     gap: 15px;
     padding: 10px;
+    background-color: #ece5dd;
 }
 
 .footer-imp{
