@@ -10,7 +10,6 @@
 *{
     font-size: small;
     
-    
 }
 
 /* common */
@@ -115,8 +114,20 @@ header,
     flex-grow: 1;
     overflow-y: scroll;
 }
+.info-cont{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+}
+.cont-img{
+    height: 40px;
+    margin-left:5px;
+    border-radius: 50%;
+}
 
-
+.time{
+    margin-right: 130px;
+}
 /* right side*/
 
 .cont-right{

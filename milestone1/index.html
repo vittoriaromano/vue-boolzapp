@@ -19,7 +19,7 @@
             <!-- header -->
             <header>
                 <div class="contact"> 
-                    <img src="img/avatar_2.jpg" alt="SOPHIA">
+                    <img src="img/avatar_1.jpg" alt="SOPHIA">
                     <h1>Nome</h1>
                 </div>
                 <div class="utilities">
@@ -49,8 +49,16 @@
                 <!-- contatti/ parte reattiva -->
                
                     <ul>
-                        <li>
-                            <img :src="contact.avatar" alt="js mi ha abbandonato">
+                        <li class="info-cont" v-for="(task, index) in contacts" >
+                            <img :src="task.avatar" alt="contatto" class="cont-img"> 
+                            <div class="text">
+                                <h3>{{task.name}}</h3>
+                                <p class="time">{{status}}</p>
+                            </div>
+                            <span> 12:00</span>
+                           
+
+
                         </li>
                     </ul>
                
@@ -108,8 +116,10 @@
 
    <!-- vue.js & js -->
    
-   <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
    <script src="js/index.js"></script>
+   
    
 
     
