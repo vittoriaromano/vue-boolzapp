@@ -103,6 +103,7 @@ header,
 .search{
     background-color: #fafafa;
     padding: 5px;
+    border: none;
   
 }
 
@@ -155,33 +156,35 @@ header,
     background-image: url(../img/mine.jpg) ;
     
 }
-.sent{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+
+.date{
+    font-size: 10px;
+    text-align: end;
 }
-.recived{
-    display: flex;
-    flex-direction: column;
-    
-}
-.msg-user1,
-.msg-user2{
-    border-radius: 20px;
-    padding: 10px;
-    margin: 20px 40px;
-    width: 20%;
-}
-.msg-user1{
-    background-color:#d5f9ba;
-    
+.msg{
+   padding: 20px;
+   margin: 3px;
+   display: flex;
 }
 
-
-.msg-user2{
+.msg-cont{
+    display: inline-block;
     background-color: white;
-   
+    padding: 6px;
+    border-radius: 10px;
+    min-width: 100px;
+    max-width: 500px;
+    overflow-wrap: break-word;
 }
+.sent{
+    background-color: #d5f9ba;
+    margin-left: 70%;
+}
+.recive{
+    background-color: white;
+}
+
+
 
 .cont-right footer{
     display: flex;
