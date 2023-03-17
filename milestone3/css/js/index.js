@@ -186,6 +186,19 @@ const { createApp } = Vue
         selectContact(index){
             console.log(index)
             this.activeContact = index;
-        }
+        },
+
+        addMsg(index) {
+            let newMsg={
+                date: this.newDate,
+                message: this.newMsg,
+                status: 'sent',
+            }
+            this.contacts[index].messages.push(newMsg);
+            // if (this.newMsg.trim() !== '') {
+                
+            //      this.newMsg = '';
+            //  }
+         },
     }
   }).mount('#app');

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+
+   <div id="app" v-cloak>
+    <!-- contenitore principale -->
+    <div class="conteiner">
+        <!--contenitore sinistra -->
+        <div class="cont-left">
+            <!-- header -->
+            <header>
+                <div class="contact"> 
+                    <img src="img/avatar_1.jpg" alt="SOPHIA">
+                    <h1>Nome</h1>
+                </div>
+                <div class="utilities">
+                    <span class="p"><i class="fa-solid fa-circle-notch"></i></span>
+                    <span class="p"><i class="fa-solid fa-message"></i></span>
+                    <span class="p"><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                </div>
+            </header>
+            <!-- parte notifice e search box fisse -->
+           
+                <div class="notifications">
+                    <span class="bell"><i class="fa-solid fa-bell-slash"></i></span>
+                    <div>
+                        <h2>Hai delle notifiche</h2>
+                        <a href="#">tutte le notifiche di queso mondo</a>
+                    </div>
+                    
+                </div>
+                   <div class="search">
+                     <input type="text" placeholder=" &#128269 Search contacts">
+                   </div>
+         
+            <!-- /parte notifice e search box fisse -->
+            <!-- main -->
+            <main>
+                
+                <!-- contatti/ parte reattiva -->
+               
+                    <ul>
+                        <li class="info-cont" v-for="(task, index) in contacts" @click="selectContact(index)" :key="index">
+                            <img :src="task.avatar" alt="contatto" class="cont-img"  > 
+                            <div class="text">
+                                <h3>{{task.name}}</h3>
+                                <p class="time">{{status}}</p>
+                            </div>
+                            <span> 12:00</span>
+                        </li>
+                    </ul>    
+            </main>
+            
+        </div>
+        <!-- fine contenitore sinistra -->
+        <!--contenitore destra -->
+        <div class="cont-right"  >
+             <!-- header -->
+            <header>
+                <div class="contact"> 
+                    <img :src="contacts[activeContact].avatar" alt="SOPHIA">
+                    <h1>{{contacts[activeContact].name}}</h1>
+                </div>
+                <div class="utilities">
+                    <span class="p"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <span class="p"><i class="fa-regular fa-file"></i></span>
+                    <span class="p"><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                </div>
+            </header>
+             <!-- main -->
+            <main>
+
+                <div class="msg" v-for="(msg) in contacts[activeContact].messages" >
+                    <div class="msg-cont" :class="msg.status">
+                        <div class="msg-text">{{msg.message}}</div>
+                        <div class="date">12:09</div>
+                    </div> 
+                </div>
+                    
+              
+                <div>
+                    <!-- <div class="recived">
+                        <div class="msg-user2" v-for="(msg, index) in contacts[activeContact].messages">
+                            <p v-else="msg.recived">{{msg.message}}</p>
+                        </div>
+                    </div>  -->
+
+                </div> 
+                
+            </main>
+            <!-- footer -->
+            <footer>
+                <div class="emoji"><i class="fa-regular fa-face-smile"></i></div>
+               <input v-model="newMsg" @keyup.enter="addMsg(index)" class="footer-imp" type="text">
+                <div ><i class="fa-solid fa-microphone"></i></div>
+            </footer>
+        </div>
+        <!--fine contenitore destra -->
+
+    </div>
+   </div>
+   <!--fine contenitore principale -->
+
+
+   <!-- vue.js & js -->
+   
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+   <script src="js/index.js"></script>
+   
+   
+
+    
+</body>
+</html>
