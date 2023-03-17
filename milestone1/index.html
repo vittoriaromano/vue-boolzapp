@@ -11,7 +11,7 @@
 </head>
 <body>
 
-   <div id="app">
+   <div id="app" v-cloak>
     <!-- contenitore principale -->
     <div class="conteiner">
         <!--contenitore sinistra -->
@@ -49,8 +49,8 @@
                 <!-- contatti/ parte reattiva -->
                
                     <ul>
-                        <li class="info-cont" v-for="(task, index) in contacts" >
-                            <img :src="task.avatar" alt="contatto" class="cont-img"> 
+                        <li class="info-cont" v-for="(task, index) in contacts" @click="selectContact(index)">
+                            <img :src="task.avatar" alt="contatto" class="cont-img"  > 
                             <div class="text">
                                 <h3>{{task.name}}</h3>
                                 <p class="time">{{status}}</p>

@@ -4,7 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+[v-cloack]{
+    display: none;
+}
 /* text */
 
 *{
@@ -25,7 +27,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(#075E54 0%, #075E54 130px, rgb(196, 185, 185) 130px, rgb(196, 185, 185) 100%)
+    background: linear-gradient(#009688 0%, #009688 130px,#dadbd2 130px,#dadbd2 100%)
     
 }
 .conteiner{
@@ -40,7 +42,6 @@ body{
 .cont-right{
    height: 90%;
    border: 1 solid black;
-   background-color: white;
    margin: 20px 0;
    display: flex;
    flex-direction: column;
@@ -50,7 +51,7 @@ body{
 
 * header{
     height: 50px;
-    background-color: #ece5dd;
+    background-color: #eaeaea;
     border: 1px solid gray;
     flex-shrink: 0;
 }
@@ -84,7 +85,7 @@ header,
 
 .notifications{
     height: 60px;
-    background-color: #55b2ff;
+    background-color: #8edafc;
     display: flex;
     gap: .625rem;
     padding: 10px;
@@ -92,15 +93,15 @@ header,
     
 }
 .bell{
-    background-color:  #ece5dd ;
-    color: #55b2ff;
+    background-color:  #f2fbff ;
+    color: #8edafc;
     padding: 10px;
     border-radius: 50%;
 
 }
 
 .search{
-    background-color: #ece5dd;
+    background-color: #fafafa;
     padding: 5px;
   
 }
@@ -118,16 +119,24 @@ header,
     display: flex;
     padding: 20px;
     align-items: center;
+    background-color: #fafafa;
+    border: 1px solid  #ece5dd;
+}
+.info-cont:hover{
+    background-color: #e9ebeb;
 }
 .cont-img{
     height: 40px;
-    margin-left:5px;
     border-radius: 50%;
+    
 }
-
-.time{
+.text{
+    flex-grow: 1;
+    margin-left: 10px;
+}
+/* .time{
     margin-right: 130px;
-}
+} */
 /* right side*/
 
 .cont-right{
@@ -164,7 +173,7 @@ header,
     width: 20%;
 }
 .msg-user1{
-    background-color:#dcf8c6;
+    background-color:#d5f9ba;
     
 }
 
@@ -179,7 +188,7 @@ header,
     justify-content: space-around;
     gap: 15px;
     padding: 10px;
-    background-color: #ece5dd;
+    background-color: #f3eeea;
 }
 
 .footer-imp{
