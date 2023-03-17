@@ -78,29 +78,17 @@
             </header>
              <!-- main -->
             <main>
-
                 <div class="msg" v-for="(msg) in contacts[activeContact].messages" >
                     <div class="msg-cont" :class="msg.status">
                         <div class="msg-text">{{msg.message}}</div>
-                        <div class="date">12:09</div>
+                        <div class="date">{{msg.date}}</div>
                     </div> 
                 </div>
-                    
-              
-                <div>
-                    <!-- <div class="recived">
-                        <div class="msg-user2" v-for="(msg, index) in contacts[activeContact].messages">
-                            <p v-else="msg.recived">{{msg.message}}</p>
-                        </div>
-                    </div>  -->
-
-                </div> 
-                
             </main>
             <!-- footer -->
             <footer>
                 <div class="emoji"><i class="fa-regular fa-face-smile"></i></div>
-               <input v-model="newMsg" @keyup.enter="addMsg(index)" class="footer-imp" type="text">
+                <input v-model="newMsg" @keyup.enter="addMsg(activeContact), msgInt(activeContact)" class="footer-imp" type="text">
                 <div ><i class="fa-solid fa-microphone"></i></div>
             </footer>
         </div>

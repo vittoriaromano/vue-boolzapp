@@ -188,17 +188,29 @@ const { createApp } = Vue
             this.activeContact = index;
         },
 
-        addMsg(index) {
+        addMsg(activeContact) {
             let newMsg={
                 date: this.newDate,
                 message: this.newMsg,
                 status: 'sent',
             }
-            this.contacts[index].messages.push(newMsg);
-            // if (this.newMsg.trim() !== '') {
-                
-            //      this.newMsg = '';
-            //  }
+           
+             if (this.newMsg.trim() !== '') {
+                this.contacts[activeContact].messages.push(newMsg);
+                this.newMsg = '';
+          }
          },
+         msgInt(activeContact){
+            let newMsgInt={
+                date: this.newDate,
+                message: 'okey',
+                status: 'recive',
+            }
+            setTimeout (() => {
+                this.contacts[activeContact].messages.push(newMsgInt);
+ 
+            },1000)
+ 
+         }
     }
   }).mount('#app');
