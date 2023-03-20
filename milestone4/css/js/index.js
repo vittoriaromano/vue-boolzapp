@@ -213,7 +213,17 @@ const { createApp } = Vue
             },1000)
  
          },
-         
+
+
+
+        contFilt() {
+            if (this.searchKey !== '') {
+                return this.contacts.filter(element => (element.name).toLowerCase().includes(this.searchKey.toLowerCase()));
+            } else {
+                return this.contacts;
+            }
+
+        }
 
     }
 
