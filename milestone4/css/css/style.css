@@ -27,7 +27,8 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(#009688 0%, #009688 130px,#dadbd2 130px,#dadbd2 100%)
+    background: linear-gradient(#009688 0%, #009688 130px,#dadbd2 130px,#dadbd2 100%);
+    font-family: 'Lato', sans-serif;
     
 }
 .conteiner{
@@ -70,6 +71,17 @@ header,
     align-items: center;
     gap: 5px;
     padding: 5px;
+}
+
+.bold{
+    font-size: 1.125rem;
+    color: black;
+    font-weight: bolder;
+}
+
+.time{
+    font-size: 1rem;
+    color: gray;
 }
 /* left side*/
 
@@ -184,7 +196,7 @@ header,
     background-color: white;
 }
 
-
+/* footer parte destra */
 
 .cont-right footer{
     display: flex;

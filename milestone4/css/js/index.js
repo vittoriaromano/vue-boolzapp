@@ -116,7 +116,7 @@ const { createApp } = Vue
             },
             {
                 name: 'Claudia',
-                avatar: './img/avatar_5.jpg',
+                avatar: './img/avatar_6.jpg',
                 visible: true,
                 messages: [
                     {
@@ -213,9 +213,6 @@ const { createApp } = Vue
             },1000)
  
          },
-
-
-
         contFilt() {
             if (this.searchKey !== '') {
                 return this.contacts.filter(element => (element.name).toLowerCase().includes(this.searchKey.toLowerCase()));
