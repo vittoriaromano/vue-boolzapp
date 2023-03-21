@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!-- google font -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+    <title>Milestone5</title>
+</head>
+<body>
+
+   <div id="app" v-cloak>
+    <!-- contenitore principale -->
+    <div class="conteiner">
+        <!--contenitore sinistra -->
+        <div class="cont-left">
+            <!-- header -->
+            <header>
+                <div class="contact"> 
+                    <img src="img/avatar_2.jpg" alt="SOPHIA">
+                    <h1 class="bold">Vittoria</h1>
+                </div>
+                <div class="utilities">
+                    <span class="p"><i class="fa-solid fa-circle-notch"></i></span>
+                    <span class="p"><i class="fa-solid fa-message"></i></span>
+                    <span class="p"><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                </div>
+            </header>
+            <!-- parte notifice e search box fisse -->
+           
+                <div class="notifications">
+                    <span class="bell"><i class="fa-solid fa-bell-slash"></i></span>
+                    <div>
+                        <h2 class="bold">Hai delle notifiche</h2>
+                        <a class="time" href="#">tutte le notifiche di queso mondo</a>
+                    </div>
+                    
+                </div>
+                   <div class="search">
+                     <input v-model="searchKey" @keyup="contFilt" type="text" placeholder="&#xF002; Cerca contatti" style="font-family:Arial, FontAwesome;">
+                   </div>
+         
+            <!-- /parte notifice e search box fisse -->
+            <!-- main -->
+            <main>
+                
+                <!-- contatti/ parte reattiva -->
+               
+                    <ul>
+                        <li class="info-cont" v-for="(cont, index) in contFilt(activeContact)" v-show="contFilt()" @click="selectContact(index)"  :class="activeUt(index)">
+                            <img :src="cont.avatar" alt="contatto" class="cont-img"  > 
+                            <div class="text">
+                                <h3 class="bold">{{cont.name}}</h3>
+                                <p class="time">{{status}}</p>
+                            </div>
+                            <span> 12:00</span>
+                        </li>
+                    </ul>    
+            </main>
+            
+        </div>
+        <!-- fine contenitore sinistra -->
+        <!--contenitore destra -->
+        <div class="cont-right"  >
+             <!-- header -->
+            <header>
+                <div class="contact"> 
+                    <img :src="contacts[activeContact].avatar" alt="contatto">
+                    <div>
+                        <h1 class="bold">{{contacts[activeContact].name}}</h1>
+                        <p class="time">{{status}}</p>
+                    </div>
+                    
+                </div>
+                <div class="utilities">
+                    <span class="p"><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <span class="p"><i class="fa-regular fa-file"></i></span>
+                    <span class="p"><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                </div>
+            </header>
+             <!-- main -->
+            <main>
+                <div class="msg" v-for="(msg) in contacts[activeContact].messages" >
+                    <div class="msg-cont" :class="msg.status">
+                        <!-- <span class="select"><i class="fa-solid fa-angle-down"></i></span> -->
+                        <div class="msg-text">{{msg.message}}</div>
+                        <div class="date">{{msg.date}}</div>
+                    </div> 
+                    <select class="msg-select" name="msg-select" id="msg-select">
+                        <option value=""></option>
+                        <option value="info">info</option>
+                        <option value="delete"   @click="deleteMsg(index)"> delete</option>
+                    </select>
+                </div>
+            </main>
+            <!-- footer -->
+            <footer>
+                <div class="p"><i class="fa-regular fa-face-smile"></i></div>
+                <input v-model="newMsg" @keyup.enter="addMsg(activeContact), msgInt(activeContact)" class="footer-imp" type="text" placeholder="Scrivi un messaggio">
+                <div class="p"><i class="fa-solid fa-microphone"></i></div>
+            </footer>
+        </div>
+        <!--fine contenitore destra -->
+
+    </div>
+   </div>
+   <!--fine contenitore principale -->
+
+
+   <!-- vue.js & js -->
+   
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+   <script src="js/index.js"></script>
+   
+   
+
+    
+</body>
+</html>
