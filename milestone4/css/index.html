@@ -53,7 +53,7 @@
                 <!-- contatti/ parte reattiva -->
                
                     <ul>
-                        <li class="info-cont" v-for="(cont, index) in contFilt(activeContact)" @click="selectContact(index)"  :class="activeUt(index)">
+                        <li class="info-cont" v-for="(cont) in contFilt()" @click="selectContact(cont.currentIndex)"  :class="activeUt(activeContact)">
                             <img :src="cont.avatar" alt="contatto" class="cont-img"  > 
                             <div class="text">
                                 <h3 class="bold">{{cont.name}}</h3>

@@ -214,12 +214,15 @@ const { createApp } = Vue
  
          },
         contFilt() {
-            if (this.searchKey !== '') {
-                return this.contacts.filter(element => (element.name).toLowerCase().includes(this.searchKey.toLowerCase()));
+            let contacts;
+            if (this.searchKey.trim() !== '') {
+                contacts = this.contacts
+                .map((element, index) => ({...element, currentIndex: index}))
+                .filter(element => (element.name).toLowerCase().includes(this.searchKey.toLowerCase()));
             } else {
-                return this.contacts;
+                contacts = this.contacts.map((element, index) => ({...element, currentIndex: index}))
             }
-
+            return contacts;
         }
 
     }
